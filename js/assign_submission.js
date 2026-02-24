@@ -23,8 +23,8 @@
 
     // データ取得
     Promise.all([
-        blockVizPortApi.fetchLogJson(6), // 受講者一覧（配列想定）
-        blockVizPortApi.fetchLogJson(8)  // 課題ごとのsubmitted_user_count配列
+        blockVizPortApi.fetchLogJson(5), // 受講者一覧（配列想定）
+        blockVizPortApi.fetchLogJson(7)  // 課題ごとのsubmitted_user_count配列
     ])
         .then(async ([students, students_submit]) => {
             await loadChartJs();
