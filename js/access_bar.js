@@ -123,8 +123,8 @@
     }
 
         // 集計 → 上位N件
-        console.log('取得データ', endpoint);
-        const counts = aggregateCounts(endpoint);
+        console.log('取得データ', srcData);
+        const counts = aggregateCounts(srcData);
         const TOP_N = 20; // 表示件数を調整したい場合はここを変更
         const { labels, values } = toSeries(counts, TOP_N);
 
@@ -145,6 +145,6 @@
         renderBar(canvas, labels, values, 'コンテンツ別アクセス数');
 
         // デバッグ
-        console.log('集計結果', { counts, labels, values, endpoint });
+        console.log('集計結果', { counts, labels, values, srcData });
     })();
 })();
