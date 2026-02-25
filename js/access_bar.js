@@ -112,16 +112,15 @@
         canvas.style.height = '420px';
         container.appendChild(canvas);
 
-        // データ取得
-        const endpoint = blockVizPortApi.fetchLogJson(4);
-        let srcData;
-        try {
-            srcData = endpoint;
-        } catch (e) {
-            console.error('データ取得に失敗しました: ', e);
-            renderBar(canvas, ['データ取得エラー'], [0], 'コンテンツ別アクセス数');
-            return;
-        }
+    // データ取得
+    let srcData;
+    try {
+      srcData = await blockVizPortApi.fetchLogJson(4);
+    } catch (e) {
+      console.error('データ取得に失敗しました: ', e);
+      renderBar(canvas, ['データ取得エラー'], [0], 'コンテンツ別アクセス数');
+      return;
+    }
 
         // 集計 → 上位N件
         console.log('取得データ', endpoint);
