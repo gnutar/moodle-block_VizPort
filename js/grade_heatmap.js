@@ -10,7 +10,7 @@
     const CELL_PAD = 1;
 
 window.blockVizPortApi
-  .fetchLogJson(3) // ※このままだと id=course を渡せない
+  .fetchLogJson(3) 
   .then(json => renderHeatmap(normalize(json)))
   .catch(err => console.error("成績データの取得に失敗:", err));
 
